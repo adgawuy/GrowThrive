@@ -1,0 +1,251 @@
+index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GrowThrive Products</title>
+    <style>
+        /* Base Styles */
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        h1 {
+            padding-bottom: 12px;
+            margin-bottom: 25px;
+            transition: all 0.3s ease;
+        }
+        
+        .product-list {
+            list-style-type: none;
+            padding: 0;
+            display: grid;
+            gap: 20px;
+        }
+        
+        .product-item {
+            margin: 0;
+            padding: 20px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .product-image {
+            flex-shrink: 0;
+            border-radius: 6px;
+            overflow: hidden;
+            width: 120px;
+            height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #15273a;
+            transition: all 0.3s ease;
+        }
+
+        .product-image img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .product-content {
+            flex-grow: 1;
+        }
+
+        .product-content h3 {
+            margin-top: 0;
+            margin-bottom: 8px;
+        }
+
+        .product-content p {
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        /* Theme Switcher Button */
+        .theme-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(243, 240, 240, 0.973);
+            z-index: 100;
+        }
+
+        /* Theme 1: Modern Blue (Default) */
+        .theme-blue {
+            background-color: #1e3f57;
+        }
+        .theme-blue h1 {
+            color: #0369a1;
+            border-bottom: 2px solid #bae6fd;
+        }
+        .theme-blue .product-item {
+            background-color: rgb(105, 146, 180);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid #3b82f6;
+        }
+        .theme-blue .product-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px -3px rgb(252, 248, 248);
+            border-left-width: 6px;
+        }
+        .theme-blue .product-image {
+            border: 1px solid #e0f2fe;
+        }
+        .theme-blue .theme-switcher {
+            background-color: #3b82f6;
+            color: white;
+        }
+
+        /* Theme 2: Vibrant Gradient */
+        .theme-gradient {
+            background-color: #f9fafb;
+        }
+        .theme-gradient h1 {
+            color: #111827;
+            position: relative;
+        }
+        .theme-gradient h1:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, #ec4899, #8b5cf6);
+            border-radius: 2px;
+        }
+        .theme-gradient .product-item {
+            background: linear-gradient(90deg, white 85%, #f0fdf4 100%);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .theme-gradient .product-item:hover {
+            background: linear-gradient(90deg, white 80%, #ecfdf5 100%);
+        }
+        .theme-gradient .product-item:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 4px;
+            background: linear-gradient(to bottom, #8b5cf6, #ec4899);
+        }
+        .theme-gradient .product-image {
+            border: 1px solid #f3e8ff;
+        }
+        .theme-gradient .theme-switcher {
+            background: linear-gradient(90deg, #ec4899, #8b5cf6);
+            color: white;
+        }
+
+        /* Theme 3: Dark Mode */
+        .theme-dark {
+            background-color: #0f172a;
+            color: #e2e8f0;
+        }
+        .theme-dark h1 {
+            color: #7dd3fc;
+            border-bottom: 1px solid #334155;
+        }
+        .theme-dark .product-item {
+            background-color: #1e293b;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+            border-left: 4px solid #7dd3fc;
+        }
+        .theme-dark .product-item:hover {
+            background-color: #334155;
+            transform: translateY(-2px);
+        }
+        .theme-dark .product-image {
+            background-color: #1e293b;
+            border: 1px solid #334155;
+            opacity: 0.9;
+        }
+        .theme-dark .theme-switcher {
+            background-color: #7dd3fc;
+            color: #0f172a;
+        }
+    </style>
+</head>
+<body class="theme-blue">
+    
+    <h1>GrowThrive Products</h1>
+    <ul class="product-list">
+        <li class="product-item">
+            <div class="product-image">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg7hl9ARChVZL11NN9OsgN4QAQAqG28ozKtjUu-fTfi-dKMN2iByZprnid6bvIQOM1U643mbaFprS9VuE7ul-lD-iclBQBaVfvBTuDdxv8gye-6kFRTZAnxndyVixobdm_CJarEn0eHEZpfCl19bZkHXx8zpgTvzwJXlHbYvtkq8Ob2kiy2TJbLJcuQXW8/w89-h61/Sk%C3%A4rmbild%202025-07-28%20033413.png" alt="Plant Nutrients">
+            </div>
+            <div class="product-content">
+                <h3>Premium Plant Nutrients</h3>
+                <p>Our specially formulated nutrients help plants grow faster and stronger with essential minerals and organic compounds for optimal health.</p>
+            </div>
+        </li>
+        <li class="product-item">
+            <div class="product-image">
+                <img src="https://images.unsplash.com/photo-1584735429093-adea0be98bda?w=200&auto=format&fit=crop" alt="Organic Soil">
+            </div>
+            <div class="product-content">
+                <h3>Organic Soil Mix</h3>
+                <p>100% natural soil blend enriched with compost and mycorrhizae, perfect for all types of indoor and outdoor plants.</p>
+            </div>
+        </li>
+        <li class="product-item">
+            <div class="product-image">
+                <img src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae?w=200&auto=format&fit=crop" alt="Watering System">
+            </div>
+            <div class="product-content">
+                <h3>Smart Watering System</h3>
+                <p>Automated watering solution with moisture sensors for consistent plant care, programmable schedules, and remote control via app.</p>
+            </div>
+        </li>
+        <li class="product-item">
+            <div class="product-image">
+                <img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=200&auto=format&fit=crop" alt="Grow Lights">
+            </div>
+            <div class="product-content">
+                <h3>Full Spectrum Grow Lights</h3>
+                <p>Energy-efficient LED lights with customizable spectrum settings to optimize plant growth in any environment at any growth stage.</p>
+            </div>
+        </li>
+    </ul>
+
+    <script>
+        const themes = ['theme-blue', 'theme-gradient', 'theme-dark'];
+        let currentTheme = 0;
+        
+        function switchTheme() {
+            // Remove current theme
+            document.body.classList.remove(themes[currentTheme]);
+            
+            // Cycle to next theme
+            currentTheme = (currentTheme + 1) % themes.length;
+            
+            // Apply new theme
+            document.body.classList.add(themes[currentTheme]);
+            
+            // Update button text
+            const themeNames = ['Blue', 'Gradient', 'Dark'];
+            document.querySelector('.theme-switcher').textContent = 
+                `Switch to ${themeNames[(currentTheme + 1) % themes.length]}`;
+        }
+    </script>
+</body>
+</html>
