@@ -188,59 +188,65 @@
     
     <h1>GrowThrive Products</h1>
     <ul class="product-list">
-        <li class="product-item">
-            <div class="product-image">
-                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg7hl9ARChVZL11NN9OsgN4QAQAqG28ozKtjUu-fTfi-dKMN2iByZprnid6bvIQOM1U643mbaFprS9VuE7ul-lD-iclBQBaVfvBTuDdxv8gye-6kFRTZAnxndyVixobdm_CJarEn0eHEZpfCl19bZkHXx8zpgTvzwJXlHbYvtkq8Ob2kiy2TJbLJcuQXW8/w89-h61/Sk%C3%A4rmbild%202025-07-28%20033413.png" alt="Plant Nutrients">
-            </div>
-            <div class="product-content">
-                <h3>Premium Plant Nutrients</h3>
-                <p>Our specially formulated nutrients help plants grow faster and stronger with essential minerals and organic compounds for optimal health.</p>
-            </div>
-        </li>
-        <li class="product-item">
-            <div class="product-image">
-                <img src="https://images.unsplash.com/photo-1584735429093-adea0be98bda?w=200&auto=format&fit=crop" alt="Organic Soil">
-            </div>
-            <div class="product-content">
-                <h3>Organic Soil Mix</h3>
-                <p>100% natural soil blend enriched with compost and mycorrhizae, perfect for all types of indoor and outdoor plants.</p>
-            </div>
-        </li>
-        <li class="product-item">
-            <div class="product-image">
-                <img src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae?w=200&auto=format&fit=crop" alt="Watering System">
-            </div>
-            <div class="product-content">
-                <h3>Smart Watering System</h3>
-                <p>Automated watering solution with moisture sensors for consistent plant care, programmable schedules, and remote control via app.</p>
-            </div>
-        </li>
-        <li class="product-item">
-            <div class="product-image">
-                <img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=200&auto=format&fit=crop" alt="Grow Lights">
-            </div>
-            <div class="product-content">
-                <h3>Full Spectrum Grow Lights</h3>
-                <p>Energy-efficient LED lights with customizable spectrum settings to optimize plant growth in any environment at any growth stage.</p>
-            </div>
-        </li>
+        <a href="https://fanproj2025.blogspot.com/2025/06/hit-third-case-af-somali-apr-30-2025157.html" target="_blank" style="text-decoration: none; color: inherit;">
+            <li class="product-item">
+                <div class="product-image">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg7hl9ARChVZL11NN9OsgN4QAQAqG28ozKtjUu-fTfi-dKMN2iByZprnid6bvIQOM1U643mbaFprS9VuE7ul-lD-iclBQBaVfvBTuDdxv8gye-6kFRTZAnxndyVixobdm_CJarEn0eHEZpfCl19bZkHXx8zpgTvzwJXlHbYvtkq8Ob2kiy2TJbLJcuQXW8/w89-h61/Sk%C3%A4rmbild%202025-07-28%20033413.png" alt="Plant Nutrients">
+                </div>
+                <div class="product-content">
+                    <h3>Premium Plant Nutrients</h3>
+                    <p>Our specially formulated nutrients help plants grow faster and stronger with essential minerals and organic compounds for optimal health.</p>
+                </div>
+            </li>
+        </a>
+
+        <a href="https://fanproj2025.blogspot.com/" target="_blank" style="text-decoration: none; color: inherit;">
+            <li class="product-item">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1584735429093-adea0be98bda?w=200&auto=format&fit=crop" alt="Organic Soil">
+                </div>
+                <div class="product-content">
+                    <h3>Organic Soil Mix</h3>
+                    <p>100% natural soil blend enriched with compost and mycorrhizae, perfect for all types of indoor and outdoor plants.</p>
+                </div>
+            </li>
+        </a>
+
+        <a href="https://fanproj2025.blogspot.com/2025/06/be-happy-af-somali-mar-14-2025india129.html" target="_blank" style="text-decoration: none; color: inherit;">
+            <li class="product-item">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae?w=200&auto=format&fit=crop" alt="Watering System">
+                </div>
+                <div class="product-content">
+                    <h3>Smart Watering System</h3>
+                    <p>Automated watering solution with moisture sensors for consistent plant care, programmable schedules, and remote control via app.</p>
+                </div>
+            </li>
+        </a>
+
+        <a href="https://fanproj2025.blogspot.com/2025/06/hit-third-case-af-somali-apr-30-2025157.html" target="_blank" style="text-decoration: none; color: inherit;">
+            <li class="product-item">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=200&auto=format&fit=crop" alt="Grow Lights">
+                </div>
+                <div class="product-content">
+                    <h3>Full Spectrum Grow Lights</h3>
+                    <p>Energy-efficient LED lights with customizable spectrum settings to optimize plant growth in any environment at any growth stage.</p>
+                </div>
+            </li>
+        </a>
     </ul>
+
+    <button class="theme-switcher" onclick="switchTheme()">Switch to Gradient</button>
 
     <script>
         const themes = ['theme-blue', 'theme-gradient', 'theme-dark'];
         let currentTheme = 0;
         
         function switchTheme() {
-            // Remove current theme
             document.body.classList.remove(themes[currentTheme]);
-            
-            // Cycle to next theme
             currentTheme = (currentTheme + 1) % themes.length;
-            
-            // Apply new theme
             document.body.classList.add(themes[currentTheme]);
-            
-            // Update button text
             const themeNames = ['Blue', 'Gradient', 'Dark'];
             document.querySelector('.theme-switcher').textContent = 
                 `Switch to ${themeNames[(currentTheme + 1) % themes.length]}`;
@@ -248,3 +254,4 @@
     </script>
 </body>
 </html>
+
